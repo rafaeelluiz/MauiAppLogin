@@ -5,11 +5,24 @@
         public App()
         {
             InitializeComponent();
-        }
 
-        protected override Window CreateWindow(IActivationState? activationState)
+
+
+            MainPage = new AppShell();
+
+        }
+        //aduterando altura e largura do celular 
+
+
+        protected override Window CreateWindow(IActivationState activationState)
         {
-            return new Window(new AppShell());
+            var window = base.CreateWindow(activationState);
+
+            window.Width = 400;
+            window.Height = 700;
+
+            return window;
+
         }
     }
 }
